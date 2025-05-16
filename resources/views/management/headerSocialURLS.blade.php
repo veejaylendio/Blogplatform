@@ -85,6 +85,7 @@
 
         .sm-action-cell {
             white-space: nowrap;
+            display: flex;
         }
 
         .sm-message {
@@ -137,8 +138,19 @@
                                 {{ session('status') }}
                             </div>
                         @endif
+                        @if($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach($errors->all() as $error)
+                                        <li>
+                                            {{$error}}
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                             <div class="sm-manager-body">
-                                <form action="{{ URL::to('/addSocialURL') }}" method="POST">
+                                <form action="{{ route('social.store')}}" method="POST">
                                     @csrf
                                     <div class="sm-form-container">
                                         <h2 id="form-title">Add New Platform</h2>
@@ -166,7 +178,7 @@
                                     <tr>
                                         <th>Platform</th>
                                         <th>URL</th>
-                                        <th>Actions</th>
+                                        <th width="100">Actions</th>
                                     </tr>
                                     </thead>
                                     <tbody id="platformTableBody">
@@ -175,12 +187,14 @@
                                                 <td>{{$socialURLValue->platform}}</td>
                                                 <td>{{$socialURLValue->url}}</td>
                                                 <td class="sm-action-cell">
-                                                    <a href="{{route('editSocialURL',$socialURLValue->id)}}">
+                                                    <a href="{{route('social.edit',$socialURLValue->id)}}">
                                                         <button class="sm-button sm-edit-btn">Edit</button>
                                                     </a>
-                                                    <a href="">
+                                                    <form action="{{route('social.destroy', $socialURLValue->id)}}" method="POST" onsubmit="return confirm('Are you sure to delete this?')">
+                                                        @method('delete')
+                                                        @csrf
                                                         <button class="sm-button sm-delete-btn">Delete</button>
-                                                    </a>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         @endforeach

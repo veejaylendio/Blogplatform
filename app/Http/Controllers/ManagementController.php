@@ -46,26 +46,4 @@ class ManagementController extends Controller
         }
         return back()->with('success');
     }
-
-    public function socialURL(){
-
-        $socialURLValue = HeaderSocialURLS::get();
-
-        return view('management.headerSocialURLS', compact('socialURLValue'));
-
-    }
-    public function addSocialURL(Request $request){
-
-       $saveSocialURL = new HeaderSocialURLS();
-
-       $saveSocialURL->platform = $request->platformName;
-       $saveSocialURL->url = $request->url;
-       $saveSocialURL->save();
-
-        return redirect()->back()->with('success', 'Successfully Add Social URL!');
-    }
-
-    public function editSocialURL($id){
-        return view('management.');
-    }
 }

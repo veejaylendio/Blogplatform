@@ -95,17 +95,16 @@
                             @if($headerText != null)
                                 {{ $headerText->text}}
                             @else
-                                <h1> Default no added text to Database</h1>
+                                <h1>Default no added text to Database</h1>
 
                             @endif
                         </h1>
                     </div>
 
                     <ul class="intro-social">
-                        <li><a href="#0">Behance</a></li>
-                        <li><a href="#0">Twitter</a></li>
-                        <li><a href="#0">Dribbble</a></li>
-                        <li><a href="#0">Instagram</a></li>
+                        @foreach($socials as $social)
+                            <li><a href="{{$social->url}}">{{$social->platform}}</a></li>
+                        @endforeach
                     </ul>
 
                 </div> <!-- end intro content -->

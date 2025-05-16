@@ -1,7 +1,9 @@
 <?php
 
+use App\Models\HeaderSocialURLS;
 use Illuminate\Support\Facades\Route;
 use App\Models\HeaderText;
+
 // use Inertia\Inertia;
 
 
@@ -17,13 +19,25 @@ Auth::routes();
 
 Route::get('/', function () {
     $headerText = HeaderText::first();
-    return view('welcome', compact('headerText'));
+    $socials = HeaderSocialURLS::all();
+    return view('welcome', compact('headerText','socials'));
 })->name('welcome');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
 Route::get('/headerText', [App\Http\Controllers\ManagementController::class, 'headerText'])->name('headerText');
 Route::post('/updateHeaderText', [App\Http\Controllers\ManagementController::class, 'updateHeaderText'])->name('updateHeaderText');
-Route::get('/socialURL', [App\Http\Controllers\ManagementController::class, 'socialURL'])->name('socialURL');
-Route::post('/addSocialURL', [App\Http\Controllers\ManagementController::class, 'addSocialURL'])->name('addSocialURL');
-Route::get('/addSocialURL/edit/{id}', [App\Http\Controllers\ManagementController::class, 'editSocialURL'])->name('editSocialURL');
+
+Route::group(['prefix' => 'social'], function () {
+    Route::get('/', [App\Http\Controllers\Management\SocialController::class, 'index'])->name('social.index');
+    Route::post('store', [App\Http\Controllers\Management\SocialController::class, 'store'])->name('social.store');
+    Route::get('edit/{id}', [App\Http\Controllers\Management\SocialController::class, 'edit'])->name('social.edit');
+    Route::post('update/{id}', [App\Http\Controllers\Management\SocialController::class, 'update'])->name('social.update');
+    Route::delete('delete/{id}', [App\Http\Controllers\Management\SocialController::class, 'destroy'])->name('social.destroy');
+});
+
+Route::group(['prefix' => 'about'], function () {
+    Route::get('/', [App\Http\Controllers\Management\SocialController::class, 'index'])->name('about.index');
+    Route::post('store', [App\Http\Controllers\Management\SocialController::class, 'store'])->name('about.store');
+
+});

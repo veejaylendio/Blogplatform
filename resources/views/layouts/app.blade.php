@@ -61,7 +61,7 @@
                             <div class="collapse" id="collapseHeader" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{ URL::to('/headerText') }}">Update Header Text</a>
-                                    <a class="nav-link" href="{{ URL::to('/socialURL') }}">Update Socials URL</a>
+                                    <a class="nav-link" href="{{ route('social.index') }}">Update Socials URL</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseAbout" aria-expanded="false" aria-controls="collapseLayouts">
@@ -71,9 +71,7 @@
                             </a>
                             <div class="collapse" id="collapseAbout" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-sidenav-light.html">Update About Text</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Update About Image</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Update CV Link</a>
+                                    <a class="nav-link" href="{{route('about.index')}}">Update About</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseExpertise" aria-expanded="false" aria-controls="collapseLayouts">
