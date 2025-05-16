@@ -51,7 +51,7 @@
         </div>
 
 
-        <!-- ## site header 
+        <!-- ## site header
         ================================================== -->
         <header class="s-header">
 
@@ -92,7 +92,12 @@
                         </div>
 
                         <h1 class="text-huge-title">
-                            {{ $headerText->text}}
+                            @if($headerText != null)
+                                {{ $headerText->text}}
+                            @else
+                                <h1> Default no added text to Database</h1>
+
+                            @endif
                         </h1>
                     </div>
 
@@ -120,7 +125,7 @@
                 <div class="row about-info wide" data-animate-block>
 
                     <div class="column lg-6 md-12 about-info__pic-block">
-                        <img src="{{ asset('assets/images/about-photo.jpg') }}" 
+                        <img src="{{ asset('assets/images/about-photo.jpg') }}"
                              srcset="{{ asset('assets/images/about-photo.jpg') }} 1x, {{ asset('assets/images/about-photo@2x.jpg') }} 2x" alt="" class="about-info__pic" data-animate-el>
                     </div>
 
@@ -131,10 +136,10 @@
                                 About
                             </h2>
                             <p class="attention-getter" data-animate-el>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
                                 velit esse cillum dolore eu fugiat nulla pariatur.
                             </p>
                             <a href="#0" class="btn btn--medium u-fullwidth" data-animate-el>Download CV</a>
@@ -183,7 +188,7 @@
                                     <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
                                 </div>
                             </div>
-    
+
                             <div class="timeline__block">
                                 <div class="timeline__bullet"></div>
                                 <div class="timeline__header">
@@ -195,7 +200,7 @@
                                     <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
                                 </div>
                             </div>
-    
+
                         </div> <!-- end timeline -->
 
                     </div> <!-- end column -->
@@ -219,7 +224,7 @@
                                     <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
                                 </div>
                             </div>
-    
+
                             <div class="timeline__block">
                                 <div class="timeline__bullet"></div>
                                 <div class="timeline__header">
@@ -231,9 +236,9 @@
                                     <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
                                 </div>
                             </div>
-    
+
                         </div> <!-- end timeline -->
-                        
+
                     </div> <!-- end column -->
 
 
@@ -257,7 +262,7 @@
                         <p class="h1" data-animate-el>
                             Here are some of my favorite projects I have done lately. Feel free to check them out.
                         </p>
-    
+
                         <ul class="folio-list row block-lg-one-half block-stack-on-1000">
 
                             <li class="folio-list__item column" data-animate-el>
@@ -266,7 +271,7 @@
                                         <img src="{{ asset('assets/images/portfolio/fuji.jpg') }}"
                                              srcset="{{ asset('assets/images/portfolio/fuji.jpg') }} 1x, {{ asset('assets/images/portfolio/fuji@2x.jpg') }} 2x"  alt="">
                                     </div>
-                                    
+
                                     <div class="folio-list__item-text">
                                         <div class="folio-list__item-cat">
                                             Website
@@ -284,10 +289,10 @@
                             <li class="folio-list__item column" data-animate-el>
                                 <a class="folio-list__item-link" href="#modal-02">
                                     <div class="folio-list__item-pic">
-                                        <img src="{{ asset('assets/images/portfolio/lamp.jpg') }}" 
+                                        <img src="{{ asset('assets/images/portfolio/lamp.jpg') }}"
                                              srcset="{{ asset('assets/images/portfolio/lamp.jpg') }} 1x, {{ asset('assets/images/portfolio/lamp@2x.jpg') }} 2x" alt="">
                                     </div>
-                                    
+
                                     <div class="folio-list__item-text">
                                         <div class="folio-list__item-cat">
                                             Product Design
@@ -305,10 +310,10 @@
                             <li class="folio-list__item column" data-animate-el>
                                 <a class="folio-list__item-link" href="#modal-03">
                                     <div class="folio-list__item-pic">
-                                        <img src="{{ asset('assets/images/portfolio/rucksack.jpg') }}" 
+                                        <img src="{{ asset('assets/images/portfolio/rucksack.jpg') }}"
                                              srcset="{{ asset('assets/images/portfolio/rucksack.jpg') }} 1x, {{ asset('assets/images/portfolio/rucksack@2x.jpg') }} 2x" alt="">
                                     </div>
-                                    
+
                                     <div class="folio-list__item-text">
                                         <div class="folio-list__item-cat">
                                             Branding
@@ -329,7 +334,7 @@
                                         <img src="{{ asset('assets/images/portfolio/skaterboy.jpg') }}"
                                              srcset="{{ asset('assets/images/portfolio/skaterboy.jpg') }} 1x, {{ asset('assets/images/portfolio/skaterboy@2x.jpg') }} 2x" alt="">
                                     </div>
-                                    
+
                                     <div class="folio-list__item-text">
                                         <div class="folio-list__item-cat">
                                             Website
@@ -347,10 +352,10 @@
                             <li class="folio-list__item column" data-animate-el>
                                 <a class="folio-list__item-link" href="#modal-05">
                                     <div class="folio-list__item-pic">
-                                        <img src="images/portfolio/sanddunes.jpg" 
+                                        <img src="images/portfolio/sanddunes.jpg"
                                              srcset="{{ asset('assets/images/portfolio/sanddunes.jpg') }} 1x, {{ asset('assets/images/portfolio/sanddunes@2x.jpg') }} 2x" alt="">
                                     </div>
-                                    
+
                                     <div class="folio-list__item-text">
                                         <div class="folio-list__item-cat">
                                             Illustration
@@ -368,10 +373,10 @@
                             <li class="folio-list__item column" data-animate-el>
                                 <a class="folio-list__item-link" href="#modal-06">
                                     <div class="folio-list__item-pic">
-                                        <img src="{{ asset('assets/images/portfolio/minimalismo.jpg') }}" 
+                                        <img src="{{ asset('assets/images/portfolio/minimalismo.jpg') }}"
                                              srcset="{{ asset('assets/images/portfolio/minimalismo.jpg') }} 1x, {{ asset('assets/images/portfolio/minimalismo@2x.jpg') }} 2x" alt="">
                                     </div>
-                                    
+
                                     <div class="folio-list__item-text">
                                         <div class="folio-list__item-cat">
                                             Branding
@@ -396,7 +401,7 @@
                     <div id="modal-01" hidden>
                         <div class="modal-popup">
                             <img src="{{ asset('assets/images/portfolio/gallery/g-fuji.jpg') }}" alt="">
-                
+
                             <div class="modal-popup__desc">
                                 <h5>Retro Camera</h5>
                                 <p>Odio soluta enim quos sit asperiores rerum rerum repudiandae cum. Vel voluptatem alias qui assumenda iure et expedita voluptatem. Ratione officiis quae.</p>
@@ -405,7 +410,7 @@
                                     <li>Product Design</li>
                                 </ul>
                             </div>
-                
+
                             <a href="https://www.behance.net/" class="modal-popup__details">Project link</a>
                         </div>
                     </div> <!-- end modal -->
@@ -413,7 +418,7 @@
                     <div id="modal-02" hidden>
                         <div class="modal-popup">
                             <img src="{{ asset('assets/images/portfolio/gallery/g-lamp.jpg') }}" alt="">
-                
+
                             <div class="modal-popup__desc">
                                 <h5>The White Lamp</h5>
                                 <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
@@ -421,7 +426,7 @@
                                     <li>Branding</li>
                                 </ul>
                             </div>
-                
+
                             <a href="https://www.behance.net/" class="modal-popup__details">Project link</a>
                         </div>
                     </div> <!-- end modal -->
@@ -429,7 +434,7 @@
                     <div id="modal-03" hidden>
                         <div class="modal-popup">
                             <img src="{{ asset('assets/images/portfolio/gallery/g-rucksack.jpg') }}" alt="">
-                
+
                             <div class="modal-popup__desc">
                                 <h5>Rucksuck</h5>
                                 <p>Exercitationem reprehenderit quod explicabo consequatur aliquid ut magni ut. Deleniti quo corrupti illum velit eveniet ratione necessitatibus ipsam mollitia.</p>
@@ -437,7 +442,7 @@
                                     <li>Product Design</li>
                                 </ul>
                             </div>
-                
+
                             <a href="https://www.behance.net/" class="modal-popup__details">Project link</a>
                         </div>
                     </div> <!-- end modal -->
@@ -445,7 +450,7 @@
                     <div id="modal-04" hidden>
                         <div class="modal-popup">
                             <img src="{{ asset('assets/images/portfolio/gallery/g-skaterboy.jpg') }}" alt="">
-                
+
                             <div class="modal-popup__desc">
                                 <h5>Since Day One</h5>
                                 <p>Dolores velit qui quos nobis. Aliquam delectus voluptas quos possimus non voluptatem voluptas voluptas. Est doloribus eligendi porro doloribus voluptatum.</p>
@@ -453,7 +458,7 @@
                                     <li>Website</li>
                                 </ul>
                             </div>
-                
+
                             <a href="https://www.behance.net/" class="modal-popup__details">Project link</a>
                         </div>
                     </div> <!-- end modal -->
@@ -462,7 +467,7 @@
                         <div class="modal-popup">
 
                             <img src="{{ asset('assets/images/portfolio/gallery/g-sanddunes.jpg') }}" alt="">
-                
+
                             <div class="modal-popup__desc">
                                 <h5>Sand Dunes</h5>
                                 <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
@@ -470,7 +475,7 @@
                                     <li>Illustration</li>
                                 </ul>
                             </div>
-                
+
                             <a href="https://www.behance.net/" class="modal-popup__details">Project link</a>
                         </div>
                     </div> <!-- end modal -->
@@ -478,7 +483,7 @@
                     <div id="modal-06" hidden>
                         <div class="modal-popup">
                             <img src="{{ asset('assets/images/portfolio/gallery/g-minimalismo.jpg') }}" alt="">
-                
+
                             <div class="modal-popup__desc">
                                 <h5>Minimalismo</h5>
                                 <p>Quisquam vel libero consequuntur autem voluptas. Qui aut vero. Omnis fugit mollitia cupiditate voluptas. Aenean sollicitudin, lorem quis bibendum auctor.</p>
@@ -487,7 +492,7 @@
                                     <li>Product Design</li>
                                 </ul>
                             </div>
-                
+
                             <a href="https://www.behance.net/" class="modal-popup__details">Project link</a>
                         </div>
                     </div> <!-- end modal -->
@@ -497,9 +502,9 @@
 
                 <div class="row testimonials">
                     <div class="column lg-12" data-animate-block>
-        
+
                         <div class="swiper-container testimonial-slider" data-animate-el>
-        
+
                             <div class="swiper-wrapper">
 
                                 <div class="testimonial-slider__slide swiper-slide">
@@ -511,12 +516,12 @@
                                         </cite>
                                     </div>
                                     <p>
-                                    Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. 
+                                    Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem.
                                     Explicabo a quaerat sint autem dolore ducimus ut consequatur neque.  Nisi dolores quaerat fuga rem nihil nostrum.
                                     Laudantium quia consequatur molestias delectus culpa.
                                     </p>
                                 </div> <!-- end testimonial-slider__slide -->
-                
+
                                 <div class="testimonial-slider__slide swiper-slide">
                                     <div class="testimonial-slider__author">
                                         <img src="{{ asset('assets/images/avatars/user-03.jpg') }}" alt="Author image" class="testimonial-slider__avatar">
@@ -531,7 +536,7 @@
                                     Quasi voluptas eius distinctio. Atque eos maxime.
                                     </p>
                                 </div> <!-- end testimonial-slider__slide -->
-                
+
                                 <div class="testimonial-slider__slide swiper-slide">
                                     <div class="testimonial-slider__author">
                                         <img src="{{ asset('assets/images/avatars/user-01.jpg') }}" alt="Author image" class="testimonial-slider__avatar">
@@ -541,12 +546,12 @@
                                         </cite>
                                     </div>
                                     <p>
-                                    Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.  
+                                    Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.
                                     Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.
                                     Voluptatem dignissimos ut.
                                     </p>
                                 </div> <!-- end testimonial-slider__slide -->
-        
+
                                 <div class="testimonial-slider__slide swiper-slide">
                                     <div class="testimonial-slider__author">
                                         <img src="{{ asset('assets/images/avatars/user-06.jpg') }}" alt="Author image" class="testimonial-slider__avatar">
@@ -556,18 +561,18 @@
                                         </cite>
                                     </div>
                                     <p>
-                                    Nunc interdum lacus sit amet orci. Vestibulum dapibus nunc ac augue. Fusce vel dui. In ac felis 
-                                    quis tortor malesuada pretium. Curabitur vestibulum aliquam leo. Qui sed at corrupti expedita voluptas odit. 
+                                    Nunc interdum lacus sit amet orci. Vestibulum dapibus nunc ac augue. Fusce vel dui. In ac felis
+                                    quis tortor malesuada pretium. Curabitur vestibulum aliquam leo. Qui sed at corrupti expedita voluptas odit.
                                     Nihil ea quia nesciunt. Ducimus aut sed ipsam.
                                     </p>
                                 </div> <!-- end testimonial-slider__slide -->
-            
+
                             </div> <!-- end swiper-wrapper -->
-        
+
                             <div class="swiper-pagination"></div>
-        
+
                         </div> <!-- end swiper-container -->
-        
+
                     </div> <!-- end column -->
                 </div> <!-- end row testimonials -->
 
@@ -586,7 +591,7 @@
 
                         <p class="h1">
                             I love to hear from you.
-                            Whether you have a question or just 
+                            Whether you have a question or just
                             want to chat about design, tech & art — shoot me a message.
                         </p>
                     </div>
@@ -626,7 +631,7 @@
 
             <div class="row">
                 <div class="column ss-copyright">
-                    <span>© Copyright Luther 2021</span> 
+                    <span>© Copyright Luther 2021</span>
                     <span>Design by <a href="https://www.styleshout.com/">StyleShout</a> Distribution By <a href="https://themewagon.com">Themewagon</a></span>
                 </div>
 

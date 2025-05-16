@@ -24,3 +24,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
 Route::get('/headerText', [App\Http\Controllers\ManagementController::class, 'headerText'])->name('headerText');
 Route::post('/updateHeaderText', [App\Http\Controllers\ManagementController::class, 'updateHeaderText'])->name('updateHeaderText');
+Route::get('/socialURL', [App\Http\Controllers\ManagementController::class, 'socialURL'])->name('socialURL');
+Route::post('/addSocialURL', [App\Http\Controllers\ManagementController::class, 'addSocialURL'])->name('addSocialURL');
+Route::get('/editSocialURL/{id}', [App\Http\Controllers\ManagementController::class, 'editSocialURL'])->name('editSocialURL');

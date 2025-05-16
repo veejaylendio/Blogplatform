@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\HeaderText;
+use App\Models\HeaderSocialURLS;
 
 class ManagementController extends Controller
 {
@@ -25,15 +26,15 @@ class ManagementController extends Controller
     public function headerText()
     {
         $headerTextValue = HeaderText::first();
-        
+
         return view('management.headerText', compact('headerTextValue'));
     }
-    
+
     public function updateHeaderText(Request $request)
     {
         $checker = HeaderText::first();
 
-        if($checker != null) 
+        if($checker != null)
         {
             $getheader = HeaderText::where('id', $request->id)->first();
             $getheader->text = $request->text2;
@@ -44,5 +45,27 @@ class ManagementController extends Controller
             $addNewHeader->save();
         }
         return back()->with('success');
+    }
+
+    public function socialURL(){
+
+        $socialURLValue = HeaderSocialURLS::get();
+
+        return view('management.headerSocialURLS', compact('socialURLValue'));
+
+    }
+    public function addSocialURL(Request $request){
+
+       $saveSocialURL = new HeaderSocialURLS();
+
+       $saveSocialURL->platform = $request->platformName;
+       $saveSocialURL->url = $request->url;
+       $saveSocialURL->save();
+
+        return redirect()->back()->with('success', 'Successfully Add Social URL!');
+    }
+
+    public function editSocialURL($id){
+        return view('management.');
     }
 }

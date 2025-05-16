@@ -20,7 +20,7 @@
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
-                    
+
                 </div>
             </form>
             <!-- Navbar-->
@@ -61,9 +61,9 @@
                             <div class="collapse" id="collapseHeader" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{ URL::to('/headerText') }}">Update Header Text</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Update Header Socials</a>                           
+                                    <a class="nav-link" href="{{ URL::to('/socialURL') }}">Update Socials URL</a>
                                 </nav>
-                            </div>    
+                            </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseAbout" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 About
@@ -75,7 +75,7 @@
                                     <a class="nav-link" href="layout-sidenav-light.html">Update About Image</a>
                                     <a class="nav-link" href="layout-sidenav-light.html">Update CV Link</a>
                                 </nav>
-                            </div>    
+                            </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseExpertise" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Expertise
@@ -85,7 +85,7 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="layout-sidenav-light.html">Update Expertise Text</a>
                                 </nav>
-                            </div>   
+                            </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseWorks" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Works
@@ -96,7 +96,7 @@
                                 <a class="nav-link" href="layout-sidenav-light.html">Update Work Text</a>
                                 <a class="nav-link" href="layout-sidenav-light.html">Update Work Images</a>
                                 </nav>
-                            </div>  
+                            </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTestimonials" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Testimonials
@@ -117,7 +117,7 @@
                                 <a class="nav-link" href="layout-sidenav-light.html">Update GetinTouch Text</a>
                                 </nav>
                             </div>
-                                      
+
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
