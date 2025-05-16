@@ -175,7 +175,7 @@
                                                 <td>{{$socialURLValue->platform}}</td>
                                                 <td>{{$socialURLValue->url}}</td>
                                                 <td class="sm-action-cell">
-                                                    <a href="{{URL::to('/editSocialURL/'.$socialURLValue->id)}}">
+                                                    <a href="{{route('editSocialURL',$socialURLValue->id)}}">
                                                         <button class="sm-button sm-edit-btn">Edit</button>
                                                     </a>
                                                     <a href="">

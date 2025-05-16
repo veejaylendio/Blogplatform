@@ -26,4 +26,4 @@ Route::get('/headerText', [App\Http\Controllers\ManagementController::class, 'he
 Route::post('/updateHeaderText', [App\Http\Controllers\ManagementController::class, 'updateHeaderText'])->name('updateHeaderText');
 Route::get('/socialURL', [App\Http\Controllers\ManagementController::class, 'socialURL'])->name('socialURL');
 Route::post('/addSocialURL', [App\Http\Controllers\ManagementController::class, 'addSocialURL'])->name('addSocialURL');
-Route::get('/editSocialURL/{id}', [App\Http\Controllers\ManagementController::class, 'editSocialURL'])->name('editSocialURL');
+Route::get('/addSocialURL/edit/{id}', [App\Http\Controllers\ManagementController::class, 'editSocialURL'])->name('editSocialURL');
