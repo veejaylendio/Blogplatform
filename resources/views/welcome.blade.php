@@ -124,8 +124,7 @@
                 <div class="row about-info wide" data-animate-block>
 
                     <div class="column lg-6 md-12 about-info__pic-block">
-                        <img src="{{ asset('assets/images/about-photo.jpg') }}"
-                             srcset="{{ asset('assets/images/about-photo.jpg') }} 1x, {{ asset('assets/images/about-photo@2x.jpg') }} 2x" alt="" class="about-info__pic" data-animate-el>
+                        <img src="{{ asset($about?->image) }}" alt="" class="about-info__pic" data-animate-el>
                     </div>
 
                     <div class="column lg-6 md-12">
@@ -135,13 +134,9 @@
                                 About
                             </h2>
                             <p class="attention-getter" data-animate-el>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                velit esse cillum dolore eu fugiat nulla pariatur.
+                                {{$about?->about}}
                             </p>
-                            <a href="#0" class="btn btn--medium u-fullwidth" data-animate-el>Download CV</a>
+                            <a href="{{$about?->cv}}" target="_blank" class="btn btn--medium u-fullwidth" data-animate-el>Download CV</a>
 
                         </div>
                     </div>

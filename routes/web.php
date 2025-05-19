@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\About;
 use App\Models\HeaderSocialURLS;
 use Illuminate\Support\Facades\Route;
 use App\Models\HeaderText;
@@ -20,7 +21,8 @@ Auth::routes();
 Route::get('/', function () {
     $headerText = HeaderText::first();
     $socials = HeaderSocialURLS::all();
-    return view('welcome', compact('headerText','socials'));
+    $about = About::first();
+    return view('welcome', compact('headerText','socials', 'about'));
 })->name('welcome');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -37,7 +39,15 @@ Route::group(['prefix' => 'social'], function () {
 });
 
 Route::group(['prefix' => 'about'], function () {
-    Route::get('/', [App\Http\Controllers\Management\SocialController::class, 'index'])->name('about.index');
-    Route::post('store', [App\Http\Controllers\Management\SocialController::class, 'store'])->name('about.store');
+    Route::get('/', [App\Http\Controllers\Management\AboutController::class, 'index'])->name('about.index');
+    Route::post('store', [App\Http\Controllers\Management\AboutController::class, 'store'])->name('about.store');
+    Route::post('update', [App\Http\Controllers\Management\AboutController::class, 'update'])->name('about.update');
+});
 
+Route::group(['prefix' => 'expertise'], function () {
+    Route::get('/', [App\Http\Controllers\Management\ExpertiseController::class, 'index'])->name('expertise.index');
+    Route::post('store', [App\Http\Controllers\Management\ExpertiseController::class, 'store'])->name('expertise.store');
+    Route::get('edit/{id}', [App\Http\Controllers\Management\ExpertiseController::class, 'edit'])->name('expertise.edit');
+    Route::post('update/{id}', [App\Http\Controllers\Management\ExpertiseController::class, 'update'])->name('expertise.update');
+    Route::delete('delete/{id}', [App\Http\Controllers\Management\ExpertiseController::class, 'destroy'])->name('expertise.destroy');
 });

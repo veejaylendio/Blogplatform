@@ -36,10 +36,8 @@ class SocialController extends Controller
            'url' => 'required|url',
         ]);
         $saveSocialURL = new HeaderSocialURLS();
-
         $saveSocialURL->platform = $request->platformName;
         $saveSocialURL->url = $request->url;
-
         $saveSocialURL->save();
 
         return redirect()->back()->with('success', 'Successfully Add Social URL!');
@@ -67,7 +65,7 @@ class SocialController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $social = HeaderSocialURLS::find($id)->first();
+        $social = HeaderSocialURLS::find($id);
         $platform = request('platformName');
         $url = request('url');
 
@@ -83,7 +81,7 @@ class SocialController extends Controller
      */
     public function destroy($id)
     {
-        $social = HeaderSocialURLS::find($id)->first();
+        $social = HeaderSocialURLS::find($id);
         $social->delete();
 
         return redirect()->route('social.index');
