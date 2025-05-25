@@ -149,12 +149,11 @@
                         <h2 class="text-pretitle" data-animate-el>Expertise</h2>
 
                         <ul class="skills-list h1" data-animate-el>
-                            <li>Visual Design</li>
-                            <li>Branding Identity</li>
-                            <li>UI Design</li>
-                            <li>Product Design</li>
-                            <li>Prototyping</li>
-                            <li>Illustration</li>
+                            @foreach($expertises as $expertise)
+                                <li>
+                                    {{$expertise->expertise}}
+                                </li>
+                            @endforeach
                         </ul>
 
                     </div>
@@ -172,29 +171,18 @@
                         <div class="timeline" data-animate-el>
 
                             <div class="timeline__block">
-                                <div class="timeline__bullet"></div>
-                                <div class="timeline__header">
-                                    <h4 class="timeline__title">Dropbox</h3>
-                                    <h5 class="timeline__meta">Product Designer</h5>
-                                    <p class="timeline__timeframe">August 2019 - Present</p>
-                                </div>
-                                <div class="timeline__desc">
-                                    <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
-                                </div>
+                                  @foreach($experiences as $experience)
+                                    <div class="timeline__bullet"></div>
+                                    <div class="timeline__header">
+                                        <h4 class="timeline__title">{{$experience->company_name}}</h4>
+                                        <h5 class="timeline__meta">{{$experience->job_name}}</h5>
+                                        <p class="timeline__timeframe">{{\Carbon\Carbon::make($experience->start_date)->format('F Y') . ' - ' . ($experience->currently_working != 1  ? \Carbon\Carbon::make($experience->end_date)->format('F Y') : 'Present')}}</p>
+                                    </div>
+                                    <div class="timeline__desc">
+                                        <p>{{$experience->description}}</p>
+                                    </div>
+                                  @endforeach
                             </div>
-
-                            <div class="timeline__block">
-                                <div class="timeline__bullet"></div>
-                                <div class="timeline__header">
-                                    <h4 class="timeline__title">Microsoft</h4>
-                                    <h5 class="timeline__meta">Frontend Developer</h5>
-                                    <p class="timeline__timeframe">August 2016 - July 2019</p>
-                                </div>
-                                <div class="timeline__desc">
-                                    <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
-                                </div>
-                            </div>
-
                         </div> <!-- end timeline -->
 
                     </div> <!-- end column -->
@@ -206,38 +194,22 @@
                         </h2>
 
                         <div class="timeline" data-animate-el>
-
+                            @foreach($educations as $education)
                             <div class="timeline__block">
                                 <div class="timeline__bullet"></div>
                                 <div class="timeline__header">
-                                    <h4 class="timeline__title">University of Life</h3>
-                                    <h5 class="timeline__meta">Master in Graphic Design</h5>
-                                    <p class="timeline__timeframe">April 2015</p>
+                                    <h4 class="timeline__title">{{$education->institution_name}}</h4>
+                                    <h5 class="timeline__meta">{{$education->degree_name}}</h5>
+                                    <p class="timeline__timeframe">{{$education->date}}</p>
                                 </div>
                                 <div class="timeline__desc">
-                                    <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
+                                    <p>{{$education->description}}</p>
                                 </div>
                             </div>
-
-                            <div class="timeline__block">
-                                <div class="timeline__bullet"></div>
-                                <div class="timeline__header">
-                                    <h4 class="timeline__title">School of Cool Designers</h4>
-                                    <h5 class="timeline__meta">B.A. Degree in Graphic Design</h5>
-                                    <p class="timeline__timeframe">August 2012</p>
-                                </div>
-                                <div class="timeline__desc">
-                                    <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
-                                </div>
-                            </div>
-
+                            @endforeach
                         </div> <!-- end timeline -->
-
                     </div> <!-- end column -->
-
-
                 </div> <!-- end about-timelines -->
-
             </section> <!-- end s-about -->
 
 

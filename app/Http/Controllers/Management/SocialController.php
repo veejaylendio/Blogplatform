@@ -56,7 +56,7 @@ class SocialController extends Controller
      */
     public function edit($id)
     {
-        $social = HeaderSocialURLS::find($id)->first();
+        $social = HeaderSocialURLS::find($id);
         return view('management.headerEditSocialURLS', compact('social'));
     }
 

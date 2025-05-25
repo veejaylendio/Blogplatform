@@ -15,7 +15,6 @@
                     @endif
                     <form action="{{ URL::to('/updateHeaderText') }}" method="POST">
                         @csrf
-
                         @if($headerTextValue != null)
                             <input type="hidden" name="id" value="{{$headerTextValue->id}}">
                             <textarea name="text2" id="headerText" class="form-control">{{$headerTextValue->text}}</textarea>

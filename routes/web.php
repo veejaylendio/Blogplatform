@@ -1,10 +1,13 @@
 <?php
 
 use App\Models\About;
+use App\Models\Education;
+use App\Models\Experience;
+use App\Models\Expertise;
 use App\Models\HeaderSocialURLS;
 use Illuminate\Support\Facades\Route;
 use App\Models\HeaderText;
-
+use App\Http\Controllers\Management\ExperienceController;
 // use Inertia\Inertia;
 
 
@@ -22,7 +25,10 @@ Route::get('/', function () {
     $headerText = HeaderText::first();
     $socials = HeaderSocialURLS::all();
     $about = About::first();
-    return view('welcome', compact('headerText','socials', 'about'));
+    $expertises = Expertise::all();
+    $educations = Education::all();
+    $experiences = Experience::all();
+    return view('welcome', compact('headerText','socials', 'about', 'expertises', 'educations', 'experiences'));
 })->name('welcome');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -51,3 +57,14 @@ Route::group(['prefix' => 'expertise'], function () {
     Route::post('update/{id}', [App\Http\Controllers\Management\ExpertiseController::class, 'update'])->name('expertise.update');
     Route::delete('delete/{id}', [App\Http\Controllers\Management\ExpertiseController::class, 'destroy'])->name('expertise.destroy');
 });
+
+Route::group(['prefix' => 'education'], function () {
+    Route::get('/', [App\Http\Controllers\Management\EducationController::class, 'index'])->name('education.index');
+    Route::get('create', [App\Http\Controllers\Management\EducationController::class, 'create'])->name('education.create');
+    Route::post('store', [App\Http\Controllers\Management\EducationController::class, 'store'])->name('education.store');
+    Route::get('edit/{id}', [App\Http\Controllers\Management\EducationController::class, 'edit'])->name('education.edit');
+    Route::post('update/{id}', [App\Http\Controllers\Management\EducationController::class, 'update'])->name('education.update');
+    Route::delete('delete/{id}', [App\Http\Controllers\Management\EducationController::class, 'destroy'])->name('education.destroy');
+});
+
+Route::resource('experience',ExperienceController::class);

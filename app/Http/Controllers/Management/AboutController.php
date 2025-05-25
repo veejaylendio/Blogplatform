@@ -38,7 +38,7 @@ class AboutController extends Controller
                    ->withErrors(['about record already exist!']);
         }
         // Validate the incoming request
-        $validated = $request->validate([
+       $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:10240', // max 10MB
             'cv' => 'required|file|max:10240|mimes:pdf', // max 10MB
             'about' => 'required|string',
