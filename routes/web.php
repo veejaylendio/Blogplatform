@@ -8,6 +8,7 @@ use App\Models\HeaderSocialURLS;
 use Illuminate\Support\Facades\Route;
 use App\Models\HeaderText;
 use App\Http\Controllers\Management\ExperienceController;
+use App\Http\Controllers\Management\WorksController;
 // use Inertia\Inertia;
 
 
@@ -68,3 +69,4 @@ Route::group(['prefix' => 'education'], function () {
 });
 
 Route::resource('experience',ExperienceController::class);
+Route::resource('works',WorksController::class);

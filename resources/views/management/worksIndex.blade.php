@@ -176,65 +176,61 @@
     </style>
     <div class="container">
         <div class="table-header">
-            <h1>Experience Records</h1>
+            <h1>Recent Works Records</h1>
             <a href="{{route('experience.create')}}" class="btn btn-primary">Add New Experience</a>
         </div>
-        @if($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach($errors->all() as $error)
-                        <li>
-                            {{$error}}
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-        @if(session('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{session('success')}}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
+{{--        @if($errors->any())--}}
+{{--            <div class="alert alert-danger">--}}
+{{--                <ul>--}}
+{{--                    @foreach($errors->all() as $error)--}}
+{{--                        <li>--}}
+{{--                            {{$error}}--}}
+{{--                        </li>--}}
+{{--                    @endforeach--}}
+{{--                </ul>--}}
+{{--            </div>--}}
+{{--        @endif--}}
+{{--        @if(session('success'))--}}
+{{--            <div class="alert alert-success alert-dismissible fade show" role="alert">--}}
+{{--                {{session('success')}}--}}
+{{--                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>--}}
+{{--            </div>--}}
+{{--        @endif--}}
         <div class="table-responsive">
             <table class="table">
                 <thead>
                 <tr>
-                    <th>Company</th>
-                    <th>Title</th>
-                    <th>Duration</th>
-                    <th>Description</th>
+                    <th>Image</th>
+                    <th>Project Title</th>
+                    <th>Project Type </th>
+                    <th>URL</th>
+{{--                    <th>Description</th>--}}
                     <th width="100">Actions</th>
                 </tr>
                 </thead>
-                    <tbody>
-                    @if(count($experiences))
-                        @foreach($experiences as $experience)
-                            <tr>
-                                <td>{{$experience->company_name}}</td>
-                                <td>{{$experience->job_title}}</td>
-                                <td>{{\Carbon\Carbon::make($experience->start_date)->format('F Y') . ' - ' . ($experience->currently_working != 1  ? \Carbon\Carbon::make($experience->end_date)->format('F Y') : 'Present')}}</td>
-                                <td class="description-cell">{{$experience->description}}</td>
-                                <td class="table-actions">
-                                    <a href="{{route('experience.edit', $experience->id)}}" class="btn btn-edit">Edit</a>
-                                    <form action="{{route('experience.destroy', $experience->id)}}" method="POST" onsubmit="return confirm('Are you sure to delete this?')">
-                                        @method('delete')
-                                        @csrf
-                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
-                    @else
-                        <tr>
-                            <td colspan="6">
-                                <div class="sm-no-data">
-                                    No Experience records added yet. Use the form to add your experience details.
-                                </div>
-                            </td>
-                        </tr>
-                    @endif
-                    </tbody>
+                <tbody>
+{{--                    <tr>--}}
+{{--                        <td>{{$experience->company_name}}</td>--}}
+{{--                        <td>{{$experience->job_title}}</td>--}}
+{{--                        <td>{{\Carbon\Carbon::make($experience->start_date)->format('F Y') . ' - ' . ($experience->currently_working != 1  ? \Carbon\Carbon::make($experience->end_date)->format('F Y') : 'Present')}}</td>--}}
+{{--                        <td class="description-cell">{{$experience->description}}</td>--}}
+{{--                        <td class="table-actions">--}}
+{{--                            <a href="{{route('experience.edit', $experience->id)}}" class="btn btn-edit">Edit</a>--}}
+{{--                            <form action="{{route('experience.destroy', $experience->id)}}" method="POST" onsubmit="return confirm('Are you sure to delete this?')">--}}
+{{--                                @method('delete')--}}
+{{--                                @csrf--}}
+{{--                                <button type="submit" class="btn btn-danger">Delete</button>--}}
+{{--                            </form>--}}
+{{--                        </td>--}}
+{{--                    </tr>--}}
+                    <tr>
+                        <td colspan="6">
+                            <div class="sm-no-data">
+                                No recent works records added yet. Use the form to add your experience details.
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </div>

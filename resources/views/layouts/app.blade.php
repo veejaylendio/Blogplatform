@@ -103,8 +103,7 @@
                             </a>
                             <div class="collapse" id="collapseWorks" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="layout-sidenav-light.html">Update Work Text</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">Update Work Images</a>
+                                <a class="nav-link" href="{{route('works.index')}}">Update Recent Work</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTestimonials" aria-expanded="false" aria-controls="collapseLayouts">
